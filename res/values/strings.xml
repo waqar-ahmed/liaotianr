@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LiaoTianr</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_friend_list">FriendListActivity</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="logo">Logo</string>
+    <string name="name">Name</string>
+    <string name="send">Send</string>
+    <string name="emo">emo</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="add_friend">Add Friend</string>
+    <string name="title_activity_chat">ChatActivity</string>
+
+</resources>

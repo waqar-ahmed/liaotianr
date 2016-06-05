@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:summary="username and password" android:enabled="true" android:key="credential" android:title="Credentials">
+        <EditTextPreference android:selectable="true" android:positiveButtonText="Ok" android:dialogTitle="Username" android:summary="username" android:negativeButtonText="Cancel" android:dialogMessage="Please enter your username" android:enabled="true" android:title="Username" android:key="username"/>
+        <EditTextPreference android:selectable="true" android:positiveButtonText="Ok" android:dialogTitle="Password" android:summary="user password" android:negativeButtonText="Cancel" android:dialogMessage="Please enter your password" android:enabled="true" android:title="Password" android:key="password"/>
+    </PreferenceCategory>
+    
+
+</PreferenceScreen>

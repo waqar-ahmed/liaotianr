@@ -1,0 +1,11 @@
+<sql>
+    <statement>
+    CREATE TABLE Employee (
+        _id INTEGER PRIMARY KEY,
+        FullName VARCHAR(50),
+        Designation VARCHAR(50),
+        ContactNo VARCHAR(100),
+        Email VARCHAR(50),
+        Image BLOB )
+    </statement>
+</sql>
