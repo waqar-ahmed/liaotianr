@@ -50,6 +50,10 @@ public class XMPPManager{
 	private static boolean isLogin = false;
 
 	private XMPPManager(Context context){
+		init(context);
+	}
+
+	private void init(Context context) {
 		mContext = context;
 		smackAndroid = SmackAndroid.init(context);
 		mConfiguration = new ConnectionConfiguration(ServerConfiguration.SERVER_ADDRESS, ServerConfiguration.SERVER_PORT);
@@ -121,15 +125,14 @@ public class XMPPManager{
 	private boolean performLogin(String username, String password) throws XMPPException{
 		Utility.Log(TAG, "logging in...");
 		
-		if(isUserLogin()) {
-			Utility.Log(TAG, "Already login to server");
-			return true;
-		}
+//		if(isUserLogin()) {
+//			Utility.Log(TAG, "Already login to server");
+//			return true;
+//		}
 		
 		try {
 			if(ConnectionStatus.NETWORK_AVAILABLE && ConnectionStatus.CURRENT_STATUS == ConnectionStatus.CONNECTED){
 				mConnection.login(username, password);
-				
 				mConnection.sendPacket(new Presence(Presence.Type.available));
 				
 				isLogin = true;
@@ -168,7 +171,7 @@ public class XMPPManager{
 			Utility.Log(TAG, "Connecting...");
 			mConnection.connect();
 			Utility.Log(TAG,"connected....");
-			
+			ConnectionStatus.CURRENT_STATUS = ConnectionStatus.CONNECTED;
 			
 			
 			intent = new Intent();
@@ -180,7 +183,6 @@ public class XMPPManager{
 			
 			mConnection.addConnectionListener(mConnectionListener);
 			
-			ConnectionStatus.CURRENT_STATUS = ConnectionStatus.CONNECTED;
 			Utility.Log(TAG, "Connected");
 			
 			initializeListeners();
@@ -405,7 +407,19 @@ public class XMPPManager{
 		protected Void doInBackground(Void... params) {
 			// TODO Auto-generated method stub
 			
+			while(ConnectionStatus.CURRENT_STATUS != ConnectionStatus.DISCONNECTED){
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
 			try{
+				if(mConnection == null){
+					init(mContext);
+				}
 				XMPPManager.connectToServer();
 			}
 			catch(Exception e){

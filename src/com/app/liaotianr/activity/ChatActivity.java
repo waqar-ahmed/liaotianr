@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.jivesoftware.smack.XMPPException;
 
 import android.accounts.NetworkErrorException;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -30,7 +31,7 @@ import com.app.liaotianr.service.XMPPService;
 import com.app.liaotianr.xmpp.XMPPConstants;
 import com.app.liaotianr.xmpp.XMPPUtils;
 
-public class ChatActivity extends ActionBarActivity {
+public class ChatActivity extends Activity {
 
 	static final String CHAT_ACTIVITY_INTENT_ACTIVE = "com.app.liaotianr.chatActivity_active";
 	static final String CHAT_ACTIVITY_INTENT_UNACTIVE = "com.app.liaotianr.chatActivity_unactive";

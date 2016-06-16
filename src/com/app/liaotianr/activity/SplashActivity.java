@@ -5,11 +5,12 @@ import com.app.liaotianr.R;
 import com.app.liaotianr.MyPreference.Keys;
 import com.app.liaotianr.R.layout;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
-public class SplashActivity extends ActionBarActivity {
+public class SplashActivity extends Activity {
 
 	Intent intent;
 	

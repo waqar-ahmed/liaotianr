@@ -1,58 +1,64 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
-    
+
     <LinearLayout
-        android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-        >
-        
-        <ImageView 
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical" >
+
+        <ImageView
             android:id="@+id/register_img"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-  			android:src="@drawable/logo1"
-  			android:contentDescription="@string/logo"
-  			android:layout_marginBottom="20dp"
-            />
-              
-        <EditText 
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/logo1" />
+
+        <EditText
             android:id="@+id/register_et_username"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/username"
             android:layout_marginBottom="10dp"
-            />  
-            
-         <EditText 
+            android:hint="@string/username" />
+
+        <EditText
             android:id="@+id/register_et_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/name"
             android:layout_marginBottom="10dp"
-            />  
-            
-        <EditText 
+            android:hint="@string/name" />
+
+        <EditText
             android:id="@+id/register_et_password"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
-            android:inputType="textPassword"
             android:layout_marginBottom="10dp"
-            />  
-            
-        <Button 
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+        <Button
             android:id="@+id/register_btn_register"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/register"
             android:onClick="registerMe"
-            />
-        
+            android:text="@string/register" />
     </LinearLayout>
+    
+    <TextView
+        android:id="@+id/register_tv_loginLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Already have account? Please login here"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+         />
 
 </RelativeLayout>
